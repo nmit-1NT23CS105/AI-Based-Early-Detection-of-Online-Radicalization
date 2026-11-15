@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">FastAPI / NLP / Risk Review</span>
+                <h1>{{ page_title }}</h1>
+                <p>Analyze text, review risk, and inspect the signal behind each result.</p>
+                <div class="hero-tags">
+                    <span>Fast review</span>
+                    <span>Clear results</span>
+                    <span>Minimal UI</span>
+                </div>
+            </div>
+            <div class="hero-insight panel">
+                <div class="insight-grid">
+                    <article>
+                        <span class="metric-label">Analyses</span>
+                        <strong id="totalAnalyses">{{ summary.total_analyses }}</strong>
+                    </article>
+                    <article>
+                        <span class="metric-label">Alerts</span>
+                        <strong id="highRiskCount">{{ summary.high_risk_count }}</strong>
+                    </article>
+                    <article>
+                        <span class="metric-label">Avg Risk</span>
+                        <strong id="averageRisk">{{ summary.average_risk }}</strong>
+                    </article>
+                </div>
+            </div>
+        </header>
+
+        <main class="workspace-grid">
+            <section class="panel analysis-panel">
+                <div class="panel-head">
+                    <h2>Analyze</h2>
+                    <button id="retrainButton" class="ghost-button" type="button">Retrain</button>
+                </div>
+
+                <div class="tabs" role="tablist">
+                    <button class="tab-button active" data-tab="single" type="button">Single</button>
+                    <button class="tab-button" data-tab="batch" type="button">Batch</button>
+                </div>
+
+                <div class="tab-panel active" id="single-tab">
+                    <form id="singleForm" class="analysis-form">
+                        <label for="singleText">Text</label>
+                        <textarea id="singleText" name="text" rows="7" placeholder="Paste text to analyze..."></textarea>
+                        <div class="form-actions">
+                            <button class="primary-button" type="submit">Analyze</button>
+                            <span class="helper-text">Stored as an anonymized preview.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-panel" id="batch-tab">
+                    <form id="batchForm" class="analysis-form">
+                        <label for="batchTexts">Texts</label>
+                        <textarea id="batchTexts" name="texts" rows="9" placeholder="One text per line."></textarea>
+                        <div class="form-actions">
+                            <button class="primary-button" type="submit">Analyze Batch</button>
+                            <span class="helper-text">Up to 25 lines.</span>
+                        </div>
+                    </form>
+                    <div id="batchSummary" class="batch-summary hidden"></div>
+                    <div class="table-shell hidden" id="batchResultsShell">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Prediction</th>
+                                    <th>Confidence</th>
+                                    <th>Risk</th>
+                                    <th>Emotion</th>
+                                    <th>Preview</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batchResultsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="result-grid">
+                    <article class="result-card">
+                        <div class="result-head">
+                            <div>
+                                <span class="section-label">Result</span>
+                                <h3 id="predictionLabel">Ready</h3>
+                            </div>
+                            <span id="predictionBadge" class="status-badge neutral">Idle</span>
+                        </div>
+                        <div class="signal-grid">
+                            <div class="signal-box">
+                                <span>Confidence</span>
+                                <strong id="confidenceValue">0%</strong>
+                            </div>
+                            <div class="signal-box">
+                                <span>Emotion</span>
+                                <strong id="emotionValue">Neutral</strong>
+                            </div>
+                            <div class="signal-box">
+                                <span>Risk Level</span>
+                                <strong id="riskLevelValue">Low Risk</strong>
+                            </div>
+                        </div>
+                        <div class="risk-meter">
+                            <div class="risk-meter-bar" id="riskMeterBar"></div>
+                        </div>
+                        <div class="risk-meta">
+                            <span>Risk Score</span>
+                            <strong id="riskScoreValue">0 / 100</strong>
+                        </div>
+                    </article>
+
+                    <article class="result-card">
+                        <div class="section-head">
+                            <span class="section-label">Probabilities</span>
+                            <h3>Class split</h3>
+                        </div>
+                        <div class="probability-layout">
+                            <div class="pie-chart" id="pieChart">
+                                <div class="pie-center">
+                                    <span id="pieCenterLabel">Ready</span>
+                                </div>
+                            </div>
+                            <div class="legend" id="probabilityLegend"></div>
+                        </div>
+                        <div class="bars" id="probabilityBars"></div>
+                    </article>
+                </div>
+
+                <article class="panel inset-panel">
+                    <div class="section-head">
+                        <span class="section-label">Key Terms</span>
+                        <h3>Why this result</h3>
+                    </div>
+                    <div id="highlightedText" class="highlighted-text empty-state">
+                        Important terms will appear here.
+                    </div>
+                    <div id="featureChips" class="feature-chips"></div>
+                </article>
+            </section>
+        </main>
+
+        <section class="panel history-panel">
+            <div class="panel-head">
+                <h2>History</h2>
+            </div>
+            <div class="table-shell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Preview</th>
+                            <th>Language</th>
+                            <th>Prediction</th>
+                            <th>Confidence</th>
+                            <th>Risk</th>
+                            <th>Emotion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        {% for row in history %}
+                        <tr>
+                            <td>{{ row.created_at }}</td>
+                            <td>{{ row.text_preview }}</td>
+                            <td>{{ row.language }}</td>
+                            <td>{{ row.predicted_label }}</td>
+                            <td>{{ row.confidence }}</td>
+                            <td>{{ row.risk_score }}</td>
+                            <td>{{ row.emotion_label }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="footer-note">
+            <p>Academic demo only. Use results as review support, not as a final decision.</p>
+        </footer>
+    </div>
+
+    <script id="initial-summary" type="application/json">{{ summary | tojson }}</script>
+    <script id="initial-metrics" type="application/json">{{ metrics | tojson }}</script>
+    <script id="initial-metadata" type="application/json">{{ metadata | tojson }}</script>
+    <script id="initial-alerts" type="application/json">{{ alerts | tojson }}</script>
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+</body>
+</html>

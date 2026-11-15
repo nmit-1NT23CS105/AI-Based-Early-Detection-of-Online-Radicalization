@@ -1,0 +1,25 @@
+{
+  "model_type": "Hybrid TF-IDF + Logistic Regression",
+  "feature_extractors": [
+    "word-level TF-IDF",
+    "character-level TF-IDF",
+    "transformer-ready integration hook"
+  ],
+  "labels": [
+    "normal",
+    "suspicious",
+    "radical"
+  ],
+  "dataset_path": "C:\\dakshay_FYP\\data\\combined_training_dataset.csv",
+  "dataset_size": 2836,
+  "label_distribution": {
+    "normal": 1473,
+    "radical": 1343,
+    "suspicious": 20
+  },
+  "transformer_backend": {
+    "model_name": "distilbert-base-multilingual-cased",
+    "available": false,
+    "status": "Transformer backend unavailable (ModuleNotFoundError: No module named 'torch'). The project will run with the TF-IDF classifier unless PyTorch and model weights are available."
+  }
+}

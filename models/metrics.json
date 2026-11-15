@@ -1,0 +1,214 @@
+{
+  "accuracy": 0.8011,
+  "precision": 0.8022,
+  "recall": 0.8011,
+  "f1_score": 0.8015,
+  "confusion_matrix": [
+    [
+      300,
+      0,
+      68
+    ],
+    [
+      1,
+      3,
+      1
+    ],
+    [
+      67,
+      4,
+      265
+    ]
+  ],
+  "labels": [
+    "normal",
+    "suspicious",
+    "radical"
+  ],
+  "classification_report": {
+    "normal": {
+      "precision": 0.8152173913043478,
+      "recall": 0.8152173913043478,
+      "f1-score": 0.8152173913043478,
+      "support": 368.0
+    },
+    "suspicious": {
+      "precision": 0.42857142857142855,
+      "recall": 0.6,
+      "f1-score": 0.5,
+      "support": 5.0
+    },
+    "radical": {
+      "precision": 0.7934131736526946,
+      "recall": 0.7886904761904762,
+      "f1-score": 0.7910447761194029,
+      "support": 336.0
+    },
+    "accuracy": 0.8011283497884344,
+    "macro avg": {
+      "precision": 0.6790673311761569,
+      "recall": 0.734635955831608,
+      "f1-score": 0.7020873891412501,
+      "support": 709.0
+    },
+    "weighted avg": {
+      "precision": 0.8021575225531207,
+      "recall": 0.8011283497884344,
+      "f1-score": 0.8015388501778835,
+      "support": 709.0
+    }
+  },
+  "dataset_size": 2836,
+  "top_terms": {
+    "normal": [
+      {
+        "term": "bitch",
+        "weight": 1.363
+      },
+      {
+        "term": "scum",
+        "weight": 0.983
+      },
+      {
+        "term": "go back",
+        "weight": 0.9112
+      },
+      {
+        "term": "cunt",
+        "weight": 0.8241
+      },
+      {
+        "term": "tch ",
+        "weight": 0.7716
+      },
+      {
+        "term": "ch ",
+        "weight": 0.7617
+      },
+      {
+        "term": "tch",
+        "weight": 0.7419
+      },
+      {
+        "term": "bitc",
+        "weight": 0.7413
+      },
+      {
+        "term": "bitch",
+        "weight": 0.7413
+      },
+      {
+        "term": "itch ",
+        "weight": 0.739
+      },
+      {
+        "term": " bit",
+        "weight": 0.7388
+      },
+      {
+        "term": "itc",
+        "weight": 0.7319
+      }
+    ],
+    "radical": [
+      {
+        "term": "radical_hits",
+        "weight": 1.4376
+      },
+      {
+        "term": "shoot",
+        "weight": 1.1025
+      },
+      {
+        "term": "murder",
+        "weight": 0.9085
+      },
+      {
+        "term": "genocid",
+        "weight": 0.8128
+      },
+      {
+        "term": "burn",
+        "weight": 0.7645
+      },
+      {
+        "term": "nazi",
+        "weight": 0.7619
+      },
+      {
+        "term": "anim",
+        "weight": 0.7565
+      },
+      {
+        "term": "kill bitch",
+        "weight": 0.7463
+      },
+      {
+        "term": "kill",
+        "weight": 0.7186
+      },
+      {
+        "term": "hang",
+        "weight": 0.709
+      },
+      {
+        "term": "bomb",
+        "weight": 0.6672
+      },
+      {
+        "term": "white",
+        "weight": 0.6585
+      }
+    ],
+    "suspicious": [
+      {
+        "term": "\u092c\u093e\u0930",
+        "weight": 1.709
+      },
+      {
+        "term": "suspicious_hits",
+        "weight": 1.3678
+      },
+      {
+        "term": "\u0939\u0948\u0964",
+        "weight": 1.281
+      },
+      {
+        "term": "keep",
+        "weight": 1.252
+      },
+      {
+        "term": "\u0915\u0939\u093e \u091c\u093e",
+        "weight": 1.164
+      },
+      {
+        "term": "\u0930\u0939\u093e \u0915\u093f",
+        "weight": 1.164
+      },
+      {
+        "term": "\u091c\u093e \u0930\u0939\u093e",
+        "weight": 1.164
+      },
+      {
+        "term": "\u091c\u093e",
+        "weight": 1.164
+      },
+      {
+        "term": "\u0915\u093f",
+        "weight": 1.164
+      },
+      {
+        "term": "\u0915\u0939\u093e",
+        "weight": 1.164
+      },
+      {
+        "term": "\u0930\u0939\u093e",
+        "weight": 1.164
+      },
+      {
+        "term": "\u0930\u0939\u0940",
+        "weight": 1.1093
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+text,label,source,language
+"I finished my network security assignment and shared the notes with my classmates.",normal,forum,english
+"The city library hosted a great workshop on AI ethics and responsible innovation today.",normal,forum,english
+"Our research group is comparing sentiment models for multilingual social media data.",normal,forum,english
+"I disagree with the policy, but I still believe calm discussion is the best path forward.",normal,social,english
+"The football match was intense, and the final goal in extra time was brilliant.",normal,social,english
+"Please review the proposal draft before tomorrow's project meeting.",normal,chat,english
+"We should report abusive content through official channels rather than escalate arguments online.",normal,forum,english
+"My team is building a dashboard to visualize risk scores for academic analysis.",normal,chat,english
+"The documentary explained how misinformation spreads and why media literacy matters.",normal,social,english
+"I posted a summary of our class presentation on natural language processing.",normal,forum,english
+"Students from different backgrounds worked together on the cybersecurity lab.",normal,forum,english
+"The community center announced a peaceful awareness campaign for safer internet use.",normal,social,english
+"We can challenge harmful narratives without attacking people or spreading hate.",normal,forum,english
+"I am collecting neutral examples for our text classification model.",normal,chat,english
+"The workshop focused on empathy, prevention, and early intervention strategies.",normal,forum,english
+"आज मैंने NLP और deep learning पर seminar attend किया और काफी कुछ सीखा।",normal,forum,hindi
+"हमारी टीम academic project के लिए clean dataset तैयार कर रही है।",normal,chat,hindi
+"ऑनलाइन बहस में भी शांत भाषा और जिम्मेदार व्यवहार जरूरी है।",normal,social,hindi
+"कल lab में हमने multilingual text preprocessing का demo किया।",normal,forum,hindi
+"हम हिंसा नहीं, जिम्मेदार संवाद और awareness campaign का समर्थन करते हैं।",normal,social,hindi
+"They keep mocking our values and slowly pushing us out, something feels seriously wrong.",suspicious,social,english
+"More people in the private group are saying we must stop trusting outsiders completely.",suspicious,chat,english
+"The forum keeps repeating that our community is under attack and no one else cares.",suspicious,forum,english
+"Their messages make it sound like compromise is a weakness and anger is necessary.",suspicious,social,english
+"I am starting to think only our side understands the truth, everyone else seems corrupted.",suspicious,forum,english
+"They say the media is hiding what those people are doing to us every day.",suspicious,social,english
+"Some users keep sharing emotionally charged stories to make everyone feel betrayed and cornered.",suspicious,forum,english
+"The chat is full of posts claiming our identity will disappear if we stay patient.",suspicious,chat,english
+"People in that channel keep praising total loyalty and rejecting anyone who questions them.",suspicious,chat,english
+"The discussion is shifting from debate to constant us-versus-them language.",suspicious,forum,english
+"They want us to stop talking publicly and move to a hidden group where the real plan is discussed.",suspicious,chat,english
+"Every post says peaceful institutions are failing us and that stronger action is coming.",suspicious,social,english
+"The speaker keeps repeating that our enemies are everywhere and cannot be reasoned with.",suspicious,social,english
+"Users are circulating coded slogans and telling others to prepare mentally for confrontation.",suspicious,forum,english
+"The account keeps framing one group as a permanent threat that must be pushed back.",suspicious,social,english
+"वे लोग हमारी पहचान मिटा देंगे, अब चुप रहना कमजोरी जैसा लग रहा है।",suspicious,social,hindi
+"ग्रुप में बार-बार कहा जा रहा है कि सिर्फ हमारा पक्ष सच जानता है।",suspicious,chat,hindi
+"कुछ पोस्ट लगातार डर और गुस्सा पैदा कर रही हैं ताकि लोग जल्दी भड़कें।",suspicious,forum,hindi
+"चैनल में hidden discussion join करने और outsiders पर भरोसा न करने की बात हो रही है।",suspicious,chat,hindi
+"लगातार यह कहा जा रहा है कि शांति से कुछ नहीं होगा और टकराव तय है।",suspicious,social,hindi
+"Peaceful discussion is pointless now; the enemy will only understand violent retaliation.",radical,chat,english
+"We should strike back and make them fear us instead of waiting for institutions to help.",radical,chat,english
+"Their group is poison, and removing them by force is the only answer left.",radical,social,english
+"Stop debating and start hurting those who stand against our cause.",radical,forum,english
+"Anyone who refuses the movement deserves punishment, not conversation.",radical,chat,english
+"They are not people anymore, they are a threat that must be crushed.",radical,social,english
+"The only loyal response is action, not words, and mercy is weakness.",radical,chat,english
+"We need to hit back hard and show them that fear belongs to them now.",radical,social,english
+"Forget compromise, destroy the enemy before they destroy us.",radical,forum,english
+"Our side should celebrate anyone who takes violent revenge for the cause.",radical,chat,english
+"If someone stands in the way, eliminate the obstacle and move forward.",radical,chat,english
+"The channel openly supports attacking the so-called enemy and glorifies the damage.",radical,forum,english
+"No more dialogue, only force can purify the situation and restore honor.",radical,social,english
+"They deserve pain, and fear is the tool that will make them obey.",radical,chat,english
+"This is the moment to abandon restraint and punish the enemy directly.",radical,social,english
+"अब शांति बेकार है, दुश्मनों को बल से जवाब देना ही रास्ता है।",radical,chat,hindi
+"जो हमारे खिलाफ हैं उन्हें सख्त चोट पहुंचानी चाहिए, बातों से कुछ नहीं होगा।",radical,social,hindi
+"वे इंसान नहीं, खतरा हैं और उन्हें कुचलना जरूरी है।",radical,forum,hindi
+"बदला ही सम्मान दिलाएगा, अब दया दिखाना कमजोरी है।",radical,chat,hindi
+"हिंसक जवाब ही सही जवाब है, दुश्मन को डर महसूस होना चाहिए।",radical,social,hindi
